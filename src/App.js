@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // For routing
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // For routing
 import "bootstrap/dist/css/bootstrap.min.css"; // Bootstrap for styling
-import Contacts from './Contacts'; // Import Contacts component
+import Contacts from "./Contacts"; // Import Contacts component
+import AddContact from "./AddContacts.js"; // Import AddContact component
 
 //------------------------------------------------- App --------------------------------------------------------------//
 function App() {
@@ -20,6 +21,12 @@ function App() {
                         <Route
                             path="/contacts"
                             element={<Contacts contacts={contacts} setContacts={setContacts} />}
+                        />
+
+                        {/* Route for adding a new contact */}
+                        <Route
+                            path="/add-contact"
+                            element={<AddContact contacts={contacts} setContacts={setContacts} />}
                         />
                     </Routes>
                 </div>
